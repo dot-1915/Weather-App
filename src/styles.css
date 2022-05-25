@@ -1,0 +1,50 @@
+.weather-app {
+  border: 1px solid;
+  padding: 20px;
+  margin: 25px auto;
+  max-width: 600px;
+  border-radius: 10px;
+}
+body {
+  font-family: "IBM Plex Serif", serif;
+
+  background: radial-gradient(
+    circle at 18.7% 37.8%,
+    rgb(250, 250, 250) 0%,
+    rgb(225, 234, 238) 90%
+  );
+}
+.search-bar {
+  margin-bottom: 20px;
+}
+.btn {
+  padding: 4px 7px;
+}
+h1 {
+  color: #3c4245;
+  text-align: center;
+  font-family: "Orelega One", cursive;
+}
+
+.current-temp {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Orelega One", cursive;
+}
+.units {
+  position: relative;
+  top: -12px;
+  font-size: 18px;
+}
+.long-range {
+  text-align: center;
+  font-family: "IBM Plex Serif", serif;
+  padding: 30px;
+  text-decoration: underline;
+}
+
+p {
+  text-align: center;
+  font-size: smaller;
+  padding: 20px;
+}
