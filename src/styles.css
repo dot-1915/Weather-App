@@ -48,3 +48,22 @@ p {
   font-size: smaller;
   padding: 20px;
 }
+
+ul {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}

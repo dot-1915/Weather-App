@@ -54,12 +54,20 @@
         </form>
         <button id="current">Current</button>
         <h1>Vancouver, BC, CA ️</h1>
-        <h2><span id="current-date"> Today</span>🌦️</h2>
-        <br />
+        <ul>
+          <li>Last updated: <span id="date"></span></li>
+          <li id="main-temp">
+            <h5>
+              <span id="current-temp">24</span
+              ><a href="#" id="celsius-link" class="active">℃</a> |
+              <small id="fTemp"><a href="#" id="fahrenheit-link">℉</a></small>
+            </h5>
+          </li>
+          <li id="description">Clear</li>
+          <li id="windSpeed">Windspeed: 3 km/h</li>
+          <li id="humidity">Humidity: 74%</li>
+        </ul>
 
-        <div class="current-temp">
-          10<span class="units"> °C | <a href="#">°F</a></span>
-        </div>
         <div class="long-range">Long Range Forecast</div>
         <div class="row">
           <div class="col-3">Monday</div>
