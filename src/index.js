@@ -24,27 +24,29 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
   let days = ["Tue", "Wed", "Thu"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
+      <div class="col-2">
     <div class="weather-forecast" id="forecast">
          
-            <div class="col-2">
-              <div class="weather-forecast-date">${day}</div>
+            
+              <div class="weather-forecast-date">${forecastDay.dt}</div>
               <img
-                src="http://openweathermap.org/img/wn/10d@2x.png"
+                src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                 alt=""
                 width="42"
               />
               <div class="weather-forecast-temp">
-                <span class="weather-temp-max">18°</span>
-                <span class="weather-temp-min">10°</span>
+                <span class="weather-temp-max">${forecastDay.temp.max}</span>
+                <span class="weather-temp-min">${forecastDay.temp.min}</span>
               
             </div>
           </div>
@@ -87,6 +89,12 @@ function getCurrentPosition() {
 
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
+
+function getForecast(coordinates) {
+  let apiKey = "04a4c6b7d36ff0119bbd7e0ebcad102c";
+  let apiURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
 
 function showWeather(response) {
   let cityElement = document.querySelector("h1");
@@ -140,5 +148,3 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
-
-displayForecast();
