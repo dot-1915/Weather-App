@@ -29,7 +29,7 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Tue", "Wed", "Thu"];
+
   forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
@@ -69,7 +69,7 @@ function search(event) {
 
 function searchCity(city) {
   let apiKey = "04a4c6b7d36ff0119bbd7e0ebcad102c";
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
   axios.get(apiURL).then(showWeather);
 }
